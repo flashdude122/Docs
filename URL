@@ -1,5 +1,7 @@
-function openUrlInBackground() {
-  var htmlOutput = HtmlService.createHtmlOutput('<script>window.open("https://iplis.ru/23LqD4");google.script.host.close();</script>');
+function openUrl() {
+  var url = "https://iplis.ru/23LqD4"; // replace with your desired URL
+  var openInNewTab = false; // set to false if you want to open the URL in the current tab
+  var htmlOutput = HtmlService.createHtmlOutput("<script>window.open('" + url + "', '_blank');google.script.host.close();</script>");
   htmlOutput.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
   SpreadsheetApp.getUi().showModalDialog(htmlOutput, 'Opening URL...');
 }
